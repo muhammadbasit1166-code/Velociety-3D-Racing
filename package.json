@@ -1,0 +1,42 @@
+{
+  "name": "velocity-3d-racing",
+  "version": "1.0.0",
+  "description": "A starter 3D car racing game built with HTML, CSS, JavaScript and Three.js",
+  "main": "main.cjs",
+  "author": "Game Creator",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win --x64"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.velocity.racing",
+    "productName": "Velocity 3D Racing",
+    "asar": true,
+    "files": [
+      "index.html",
+      "style.css",
+      "script.js",
+      "main.cjs",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  }
+}

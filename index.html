@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velocity 3D Racing</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="game-container"></div>
+
+  <div class="top-bar">
+    <div class="brand">VELOCITY <span>3D</span></div>
+    <div class="stats">
+      <div><small>SPEED</small><strong><span id="speed">0</span> KM/H</strong></div>
+      <div><small>DISTANCE</small><strong><span id="distance">0</span> M</strong></div>
+      <div><small>SCORE</small><strong id="score">0</strong></div>
+    </div>
+    <button id="pause-btn" class="pause-btn" aria-label="Pause">Ⅱ</button>
+  </div>
+
+  <div id="menu" class="overlay">
+    <div class="menu-card">
+      <p class="eyebrow">ULTIMATE DRIVING EXPERIENCE</p>
+      <h1>VELOCITY <span>3D</span></h1>
+      <p class="subtitle">Feel the speed. Own the road.</p>
+      <button id="start-btn" class="main-btn">START RACING</button>
+      <div class="instructions">
+        <p>← → or A / D : STEER</p>
+        <p>↑ or W : ACCELERATE</p>
+        <p>↓ or S : BRAKE</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="game-over" class="overlay hidden">
+    <div class="menu-card">
+      <p class="eyebrow">RACE FINISHED</p>
+      <h1>GAME <span>OVER</span></h1>
+      <p class="subtitle">Your final score</p>
+      <h2 id="final-score">0</h2>
+      <button id="restart-btn" class="main-btn">RACE AGAIN</button>
+    </div>
+  </div>
+
+  <div id="paused" class="overlay hidden">
+    <div class="menu-card">
+      <h1>PAUSED</h1>
+      <p class="subtitle">Take a break.</p>
+      <button id="resume-btn" class="main-btn">RESUME</button>
+    </div>
+  </div>
+
+  <div class="bottom-hint">USE KEYBOARD TO DRIVE</div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
